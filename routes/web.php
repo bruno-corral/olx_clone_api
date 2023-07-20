@@ -4,36 +4,7 @@ use App\Http\Controllers\AdvertiseController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\StatesController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
-
-/**
- * Rota de Utilidade
- * 
- * [ X ] - /ping - Responde com Pong
- * 
- * -- Rotas de Configuração Geral
- * [ X ] - /states - Listar os Estados
- * [ X ] - /categories - Listar as Categorias do Sistema
- * [ X ] - Criar as seeders para os estados e categorias.
- * 
- * - Rotas de Autenticação * Autenticação via TOKEN
- * [ X ] - /user/signin -- Login
- * [ X ] - /user/signup -- Registro do Usuário
- * [ X ] - /user/me     -- Informações do Usuário Logado
- * 
- * -- Rotas de Advertises
- * [ X ] - /advertsise/list - Listar todos os anúncios
- * [ X ] - /advertsise/:id - Dados de um anúncio único
- * [ X ] - /advertsise/add - Adicionar um novo anúncio
- * [ X ] - /advertsise/:id(PUT) - Alterar um anúnico publicado
- * [ X ] - /advertsise/:id(delete) - Deletar um anúncio
- * [ ] - /advertsise/:id/:image (Deletar uma imagem de um anúncio)
- */
-
-Route::get('ping', function() : JsonResponse {
-    return response()->json(['Pong' => true]);
-});
 
 Route::get('state/all', [StatesController::class, 'index']);
 Route::get('state/{id}', [StatesController::class, 'findOne']);
